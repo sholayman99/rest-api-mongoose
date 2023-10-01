@@ -5,11 +5,15 @@
  */
 
 const express = require('express');
-const { createProduct } = require('../Controllers/productController');
+const { createProduct, readProduct, readProductById, updateProduct, removeProductById } = require('../Controllers/productController');
 const router = express.Router();
 
+router.get("/product",readProduct);
+router.get("/product/:id",readProductById);
+router.post("/product" , createProduct );
+router.put("/product/:id" , updateProduct);
+router.delete("/product/:id" , removeProductById);
 
-router.post("/product" , createProduct )
 
 
 
